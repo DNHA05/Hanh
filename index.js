@@ -55,7 +55,7 @@ webhook_config = {
   rateboss: "", // link
 };
 // Token Tài Khoản Discord 
-token = "T0RZeU1qY3pPRFU0TWpFME9ESXhPVEk1LkdsUXAyOC5sVWItOVV1Q0NTUEpnbXBYMDZZbER4RUZPTk1YV1ViMUdvTUh5WQ==" // Token Tài Khoản Của Bạn
+token = "T0RZeU1qY3pPRFU0TWpFME9ESXhPVEk1LkdsUXAyOC5sVWItOVV1Q0NTUEpnbXBYMDZZbER4RUZPTk1YV1ViMUdvTUh5WQ=="
 try {
   require.resolve("discord.js-selfbot-v13");
 } catch (e) {
