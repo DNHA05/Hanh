@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HanhBypass - Bot Discord bypass</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: none;
+            color: white;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .bg-layer {
+            position: fixed;
+            inset: 0;
+            background: url("Anh/anhmc.jpg") center / cover no-repeat;
+            z-index: -2;
+            will-change: transform;
+        }
+
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: -1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to bottom right, #ffffff 30%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-nav {
+            background: rgba(17, 18, 23, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, #d8b4fe 0%, #818cf8 100%);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(129, 140, 248, 0.4);
+        }
+
+        .login-btn-gradient {
+            background: linear-gradient(90deg, #c084fc 0%, #6366f1 100%);
+        }
+
+        #mobile-menu {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: top;
+        }
+
+        .menu-hidden {
+            opacity: 0;
+            transform: scaleY(0);
+            pointer-events: none;
+        }
+
+        .menu-visible {
+            opacity: 1;
+            transform: scaleY(1);
+            pointer-events: auto;
+        }
+
+        .social-link-box {
+            position: relative;
+            background: #1a1c26;
+            border-radius: 12px;
+            z-index: 1;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .social-link-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, #a5b4fc, #6366f1, #c084fc, transparent 60%);
+            animation: rotate 4s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .inner-box {
+            background: #111217;
+            margin: 2px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            transition: background 0.2s;
+        }
+
+        .inner-box:hover {
+            background: #1a1b23;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem !important;
+                line-height: 1.15 !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen px-6">
+
+    <div class="bg-layer"></div>
+    <div class="bg-overlay"></div>
+
+    <div class="w-full max-w-lg mt-8 relative z-50 mx-auto">
+
+    <nav class="w-full px-4 py-3 rounded-full glass-nav flex items-center justify-between shadow-lg">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden border border-gray-700">
+                <img src="Anh/saygexlol.jpg" class="w-full h-full object-cover">
+            </div>
+        </div>
+        
+        <button onclick="toggleMenu()" class="login-btn-gradient p-2.5 rounded-full">
+            <svg id="menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="menu-hidden absolute top-full left-0 right-0 mt-3 p-4 glass-nav rounded-2xl shadow-2xl">
+        <p class="text-sm text-gray-400 mb-3 font-semibold ml-1 uppercase tracking-wider">Mạng xã hội</p>
+
+        <div class="social-link-box">
+            <div class="inner-box">
+                <span class="text-xs font-mono text-gray-300">Discord</span>
+                <a href="https://discord.gg/XEaC68tVnv" target="_blank" class="bg-indigo-600 px-3 py-1.5 rounded-md text-[10px] font-bold">MỞ LINK</a>
+            </div>
+        </div>
+
+        <div class="social-link-box">
+            <div class="inner-box">
+                <span class="text-xs font-mono text-gray-300">YouTube</span>
+                <a href="https://www.youtube.com/channel/UCl44Cc-37Ztspizug3Pze6g" target="_blank" class="bg-red-600 px-3 py-1.5 rounded-md text-[10px] font-bold">MỞ LINK</a>
+            </div>
+        </div>
+
+        <div class="social-link-box">
+            <div class="inner-box">
+                <span class="text-xs font-mono text-gray-300">TikTok</span>
+                <a href="https://www.tiktok.com/@ha2.05?" target="_blank" class="bg-pink-600 px-3 py-1.5 rounded-md text-[10px] font-bold">MỞ LINK</a>
+            </div>
+        </div>
+
+        <div class="social-link-box">
+            <div class="inner-box">
+                <span class="text-xs font-mono text-gray-300">Facebook</span>
+                <a href="https://www.facebook.com/harblx?locale=vi_VN" target="_blank" class="bg-blue-600 px-3 py-1.5 rounded-md text-[10px] font-bold">MỞ LINK</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <main class="text-center flex flex-col items-center mt-20">
+        <h1 class="font-extrabold mb-4"><span class="gradient-text">HanhBypass - Bot</span></h1>
+        <h1 class="font-extrabold mb-4"><span class="gradient-text">Discord bypass</span></h1>
+        <h1 class="font-extrabold mb-10"><span class="gradient-text">siêu vip</span></h1>
+
+        <p class="text-gray-300 text-lg max-w-md mb-12 font-medium">
+            Bot Bypass Siêu Nhanh
+        </p>
+
+        <a href="dán link mời con bot ở đây" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-gradient text-white px-10 py-5 rounded-full text-xl font-bold uppercase tracking-wider shadow-2xl">
+            INVITE BOT NOW
+        </a>
+    </main>
+
+    <footer class="mt-24 py-10 text-gray-400 text-sm text-center">
+        © 2026 hanhbypass 
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const isVisible = menu.classList.contains('menu-visible');
+            
+            if (isVisible) {
+                menu.classList.remove('menu-visible');
+                menu.classList.add('menu-hidden');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                menu.classList.remove('menu-hidden');
+                menu.classList.add('menu-visible');
+                icon.style.transform = 'rotate(90deg)';
+            }
+        }
+
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mobile-menu');
+            const nav = document.querySelector('nav');
+            if (!menu.contains(e.target) && !nav.contains(e.target)) {
+                menu.classList.remove('menu-visible');
+                menu.classList.add('menu-hidden');
+                document.getElementById('menu-icon').style.transform = 'rotate(0deg)';
+            }
+        });
+
+    </script>
+
+</body>
+</html>
